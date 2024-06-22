@@ -8,15 +8,72 @@
         <title>Library</title>
     </head>
     <body>
-        <div class="library">
-            <div class="book">
-                <h2 class="book-title">Your First Book</h2>
+        <form action="">
+            <h1>Add a new book to your library!</h1>
+            <div>
+                <label for="title">Book Title:</label>
+                <input type="text" id="title" name="title" required />
+            </div>
+            <div>
+                <label for="author">Author:</label>
+                <input type="text" id="author" name="author" required />
+            </div>
+            <div>
+                <label for="pages">Pages:</label>
+                <input type="number" id="pages" name="pages" min="0" />
+            </div>
+            <fieldset>
+                <legend>Have you read this book?</legend>
+                <div>
+                    <input
+                        type="radio"
+                        value="Yes"
+                        id="yes"
+                        name="read"
+                        required
+                    />
+                    <label for="yes">Yes</label>
+                    <input
+                        type="radio"
+                        value="No"
+                        id="no"
+                        name="read"
+                        required
+                    />
+                    <label for="no">No</label>
+                </div>
+            </fieldset>
+            <button class="new-book">Add this book!</button>
+        </form>
+        <div class="library hidden"></div>
+        <div class="library-start">
+            <div class="book-start">
+                <h2 class="book-title">Your First Book Will Go Here!</h2>
                 <p class="row-header author-header">Author:</p>
                 <p class="row-data author"></p>
                 <p class="row-header pages-header">Pages:</p>
                 <p class="row-data pages"></p>
-                <p class="row-header read-header">Read:</p>
+                <p class="row-header read-header">Read?:</p>
                 <p class="row-data read"></p>
+            </div>
+            <div class="book book-template hidden">
+                <h2 class="book-title"></h2>
+                <p class="row-header author-header">Author:</p>
+                <p class="row-data author"></p>
+                <p class="row-header pages-header">Pages:</p>
+                <p class="row-data pages"></p>
+                <p class="row-header read-header">Read?:</p>
+                <p class="row-data read"></p>
+                <button class="read-toggle">
+                    <img
+                        class="read-toggle-image"
+                        src="./imgs/book-svgrepo-com.svg"
+                        alt="click to toggle read status"
+                    />
+                </button>
+                <button class="delete">
+                    <img src="./imgs/delete.svg" alt="click to delete book" />
+                </button>
             </div>
         </div>
     </body>
