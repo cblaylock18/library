@@ -1,40 +1,90 @@
 const myLibrary = [];
 
-Book.prototype.toggle = function () {
-    if (this.read === "Yes") {
-        this.read = "No";
-    } else {
-        this.read = "Yes";
-    }
-};
+// Prototype usage here
 
-function Book(title, author, pages, read) {
-    this.title = title;
-    this.author = author;
-    this.pages = pages;
-    this.read = read;
-    this.info = function () {
-        if (read === "Yes") {
-            return (
-                this.title +
-                " by " +
-                this.author +
-                ", " +
-                this.pages +
-                " pages, read."
-            );
+// Book.prototype.toggle = function () {
+//     if (this.read === "Yes") {
+//         this.read = "No";
+//     } else {
+//         this.read = "Yes";
+//     }
+// };
+
+// function Book(title, author, pages, read) {
+//     this.title = title;
+//     this.author = author;
+//     this.pages = pages;
+//     this.read = read;
+//     this.info = function () {
+//         if (read === "Yes") {
+//             return (
+//                 this.title +
+//                 " by " +
+//                 this.author +
+//                 ", " +
+//                 this.pages +
+//                 " pages, read."
+//             );
+//         } else {
+//             return (
+//                 this.title +
+//                 " by " +
+//                 this.author +
+//                 ", " +
+//                 this.pages +
+//                 " pages, not read yet."
+//             );
+//         }
+//     };
+// }
+// const theHobbit = new Book("The Hobbit", "J.R.R Tolkien", 304, "Yes");
+// const sorcerersStone = new Book(
+//     "The Sorcerer's Stone",
+//     "J.K. Rowling",
+//     223,
+//     "Yes"
+// );
+// const eastOfEden = new Book("East Of Eden", "John Steinbeck", 601, "No");
+// const threeBodyProblem = new Book(
+//     "The Three Body Problem",
+//     "Liu Cixin",
+//     416,
+//     "Yes"
+// );
+
+class Book {
+    constructor(title, author, pages, read) {
+        this.title = title;
+        this.author = author;
+        this.pages = pages;
+        this.read = read;
+    }
+
+    getInfo() {
+        return read === "Yes"
+            ? this.title +
+                  " by " +
+                  this.author +
+                  ", " +
+                  this.pages +
+                  " pages, read."
+            : this.title +
+                  " by " +
+                  this.author +
+                  ", " +
+                  this.pages +
+                  " pages, not read yet.";
+    }
+
+    toggle() {
+        if (this.read === "Yes") {
+            this.read = "No";
         } else {
-            return (
-                this.title +
-                " by " +
-                this.author +
-                ", " +
-                this.pages +
-                " pages, not read yet."
-            );
+            this.read = "Yes";
         }
-    };
+    }
 }
+
 const theHobbit = new Book("The Hobbit", "J.R.R Tolkien", 304, "Yes");
 const sorcerersStone = new Book(
     "The Sorcerer's Stone",
